@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        supportActionBar?.hide()
-        setSupportActionBar(binding.toolbar)
+        actionBar?.hide()
+        actionBar?.show()
 
         binding.apply {
 

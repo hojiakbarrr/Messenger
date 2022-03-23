@@ -182,7 +182,7 @@
             android:fontFamily="@font/carter_one"
             android:text="Войти"
             android:background="@color/main"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="22sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline22"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"

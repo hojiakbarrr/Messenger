@@ -268,7 +268,7 @@
             android:background="#FF018786"
             android:fontFamily="@font/carter_one"
             android:text="Регистрация"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="22sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
