@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
 import com.example.messenger.ui.main.MainActivity
 import com.example.messenger.R
-import com.example.messenger.adapter.ViewPagerAdapter
+import com.example.messenger.adapter.ViewPagerAdapter_Register
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.ktx.auth
@@ -20,7 +20,7 @@ class RegisterActivity : AppCompatActivity() {
 
         val tablayout=findViewById<TabLayout>(R.id.tab_layout)
         val viewPager2=findViewById<ViewPager2>(R.id.view_pager_2)
-        val adapter= ViewPagerAdapter(supportFragmentManager,lifecycle)
+        val adapter= ViewPagerAdapter_Register(supportFragmentManager,lifecycle)
 
         viewPager2.adapter = adapter
 

@@ -7,7 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.messenger.ui.register.sign_in.SIgnInFragment
 import com.example.messenger.ui.register.sign_up.SignUpFragment
 
-class ViewPagerAdapter (fragmentManager: FragmentManager, lifecycle: Lifecycle):
+class ViewPagerAdapter_Register (fragmentManager: FragmentManager, lifecycle: Lifecycle):
     FragmentStateAdapter(fragmentManager, lifecycle) {
     override fun getItemCount(): Int {
         return 2
