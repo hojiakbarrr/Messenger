@@ -5,9 +5,9 @@
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/Messenger/app/src/main/res/font/carter_one.xml" value="0.396875" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Messenger/app/src/main/res/font/carterone.xml" value="0.396875" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Messenger/app/src/main/res/layout/activity_main.xml" value="0.17" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Messenger/app/src/main/res/layout/activity_register.xml" value="0.33" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Messenger/app/src/main/res/layout/sign_in_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Messenger/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Messenger/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Messenger/app/src/main/res/layout/sign_in_fragment.xml" value="0.18" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Messenger/app/src/main/res/layout/sign_up_fragment.xml" value="0.25" />
       </map>
     </option>

@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
-import com.example.messenger.MainActivity
+import com.example.messenger.ui.main.MainActivity
 import com.example.messenger.R
 import com.example.messenger.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
@@ -49,12 +49,15 @@ class RegisterActivity : AppCompatActivity() {
         super.onStart()
         val currentUser = auth.currentUser
 
+        /**
+         *
+         */
+
         if (currentUser!= null){
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent).also {
                 finish()
             }
         }
-
     }
 }

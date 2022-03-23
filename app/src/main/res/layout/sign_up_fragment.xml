@@ -153,7 +153,6 @@
             app:counterTextColor="@color/black"
             app:errorEnabled="true"
             app:errorIconDrawable="@drawable/error"
-            app:helperText="Required*"
             app:helperTextTextColor="@color/black"
 
             app:layout_constraintBottom_toTopOf="@+id/guideline12"
@@ -266,16 +265,14 @@
             android:id="@+id/creatNewUser"
             android:layout_width="345dp"
             android:layout_height="58dp"
-            android:backgroundTint="#00BFA5"
-            android:fontFamily="@font/carterone"
+            android:background="#FF018786"
+            android:fontFamily="@font/carter_one"
             android:text="Регистрация"
             android:textColor="@color/black"
             android:textSize="22sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
-            app:layout_constraintTop_toTopOf="@+id/guideline22"
-            app:layout_constraintVertical_bias="0.269" />
+            app:layout_constraintTop_toTopOf="@+id/guideline22" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

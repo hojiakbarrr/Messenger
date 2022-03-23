@@ -9,11 +9,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.messenger.MainActivity
-import com.example.messenger.R
-import com.example.messenger.databinding.SignInFragmentBinding
+import com.example.messenger.ui.main.MainActivity
 import com.example.messenger.databinding.SignUpFragmentBinding
+import com.example.messenger.model.User
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 
 class SignUpFragment : Fragment() {
     private var _binding: SignUpFragmentBinding? = null
@@ -24,6 +26,7 @@ class SignUpFragment : Fragment() {
     }
 
     private lateinit var viewModel: SignUpViewModel
+    private val auth = Firebase.auth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +50,7 @@ class SignUpFragment : Fragment() {
         val email = binding.editTextEmail.text
         val password = binding.editPassword.text
         val confirmPassword = binding.confirmPassword.text
+        val name = binding.editTextName.text
 
         when {
             email.isNullOrEmpty() -> {
@@ -62,22 +66,40 @@ class SignUpFragment : Fragment() {
 
             password.isNotEmpty() -> {
                 if (password.toString() == confirmPassword.toString()) {
-                    Log.d("rrrr", "password--${confirmPassword}")
-                    registerUser(email.toString(), password.toString())
+                    registerUser(email.toString().trim(),
+                        password.toString().trim(),
+                        name.toString().trim())
                 } else {
                     binding.confirmPassword.error = "Passwords do not match"
-                    Log.d("rrrr", "${confirmPassword} -- ${password}")
+                    Log.d("Error", "$confirmPassword -- $password")
                 }
             }
-
         }
-
     }
 
-    private fun registerUser(email: String, password: String) {
+    private fun registerUser(email: String, password: String, name: String) {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
+
+                    val firebaseUser = auth.currentUser
+                    val userId = firebaseUser!!.uid as String
+                    val reference = FirebaseDatabase.getInstance().getReference("Users").child(userId)
+                    val user = User()
+                    user.email = email
+                    user.userName = name
+                    user.status = "online"
+                    user.id = userId
+
+                    reference.setValue(user).addOnCompleteListener { task->
+                        if (task.isSuccessful){
+
+                        }
+                    }
+
+                    /**
+                     * между
+                     */
                     Toast.makeText(requireContext(),
                         "Вы успешно зарегистрировались",
                         Toast.LENGTH_LONG).show()

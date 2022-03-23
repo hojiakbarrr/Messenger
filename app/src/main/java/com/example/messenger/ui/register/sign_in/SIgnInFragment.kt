@@ -8,10 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.messenger.MainActivity
-import com.example.messenger.R
+import com.example.messenger.ui.main.MainActivity
 import com.example.messenger.databinding.SignInFragmentBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class SIgnInFragment : Fragment() {
     private var _binding: SignInFragmentBinding? = null
@@ -47,7 +47,7 @@ class SIgnInFragment : Fragment() {
                 binding.logInPassword.error = "Password is Empty"
             }
             else -> {
-                loginUser(email.toString(), password.toString())
+                loginUser(email.toString().trim(), password.toString().trim())
             }
 
         }
@@ -58,7 +58,14 @@ class SIgnInFragment : Fragment() {
             .addOnCompleteListener {
                 if (it.isSuccessful){
                     Toast.makeText(requireContext(),"Вы успешно авторизовались",Toast.LENGTH_LONG).show()
-                    val intent = Intent(requireContext(),MainActivity::class.java)
+                    val intent = Intent(requireContext(), MainActivity::class.java)
+
+                    /**
+                     *
+                     */
+                    val firebaseUser: FirebaseUser = it.result.user!!
+                    intent.putExtra("email_id", email)
+                    intent.putExtra("user_id", firebaseUser.uid)
                     startActivity(intent).also {
                         activity?.finish()
                     }
