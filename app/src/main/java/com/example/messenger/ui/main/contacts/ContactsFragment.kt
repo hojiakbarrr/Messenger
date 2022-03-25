@@ -1,5 +1,6 @@
 package com.example.messenger.ui.main.contacts
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -11,15 +12,17 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.messenger.R
 import com.example.messenger.adapter.ContactsAdapter
+import com.example.messenger.adapter.ItemClickListener
 import com.example.messenger.databinding.ContactsFragmentBinding
 import com.example.messenger.databinding.ProfileFragmentBinding
 import com.example.messenger.model.User
+import com.example.messenger.ui.message.MessagesActivity
 import com.example.messenger.utils.toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 
-class ContactsFragment : Fragment() {
+class ContactsFragment : Fragment(), ItemClickListener {
 
     companion object {
         fun newInstance() = ContactsFragment()
@@ -32,7 +35,7 @@ class ContactsFragment : Fragment() {
     private var auth: FirebaseAuth? = null
     var firebaseUser: FirebaseUser? = null
     var reference: DatabaseReference? = null
-    private var adapter = ContactsAdapter()
+    private var adapter = ContactsAdapter(this)
     private var users: MutableList<User> = ArrayList()
 
     override fun onCreateView(
@@ -63,7 +66,7 @@ class ContactsFragment : Fragment() {
                         Log.d("user", "$users")
                         binding.apply {
                             recContacts.layoutManager = LinearLayoutManager(requireContext())
-                            adapter = ContactsAdapter()
+                            adapter = ContactsAdapter(this@ContactsFragment)
                             adapter.contactList = users!!
                             recContacts.adapter = adapter
                         }
@@ -78,5 +81,12 @@ class ContactsFragment : Fragment() {
         })
 
 
+    }
+
+    override fun onItemClick(position: Int) {
+        val intent = Intent(activity, MessagesActivity::class.java)
+        intent.putExtra("chatUserId", users[position].id)
+        Log.d("Errr", "${users[position].id}")
+        startActivity(intent)
     }
 }

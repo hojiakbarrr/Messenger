@@ -9,7 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#E1E1E1</color>
     <color name="main">#FF018786</color>
-    <color name="green">#1BDF23</color>
-    /** цвет темы  -> style name="AppTheme.TabLayout"
+    <color name="green">#1BDF23</color> /** цвет темы  -> style name="AppTheme.TabLayout"
+
+    <color name="colorPrimary">#128c7e</color>
 
 </resources>
