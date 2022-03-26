@@ -100,7 +100,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun refreshImage(user: User) {
-        if (user.imageUrl.isNullOrEmpty()) {
+        if (user.imageUrl== "default") {
             binding.porfileImage.setImageResource(R.drawable.ic_person)
         } else {
             Picasso.get().load(user.imageUrl).into(binding.porfileImage)

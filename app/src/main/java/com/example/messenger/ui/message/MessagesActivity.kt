@@ -124,7 +124,7 @@ class MessagesActivity : AppCompatActivity() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val user: User? = snapshot.getValue(User::class.java)
                     usernameChat.text = user?.userName
-                    if (user?.imageUrl.isNullOrEmpty()) {
+                    if (user?.imageUrl == "default") {
                         profileImage.setImageResource(R.drawable.ic_person)
                     } else {
                         Picasso.get().load(user?.imageUrl).into(profileImage)

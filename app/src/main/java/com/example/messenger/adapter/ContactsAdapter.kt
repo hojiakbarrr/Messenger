@@ -21,12 +21,11 @@ class ContactsAdapter(val mItemclickListener: ItemClickListener) :
             notifyDataSetChanged()
         }
 
-
     inner class ViewHolder(private val binding: ItemUserBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) {
             binding.apply {
-                if (user.imageUrl.isNullOrEmpty()) {
+                if (user.imageUrl == "default") {
                     itemProfileImage.setImageResource(R.drawable.ic_person)
                 } else {
                     Picasso.get().load(user.imageUrl).into(itemProfileImage)

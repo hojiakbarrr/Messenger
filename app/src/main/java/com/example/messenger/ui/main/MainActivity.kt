@@ -57,11 +57,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-
-
-        val userId = intent.getSerializableExtra("user_id")
-        val mailId = intent.getSerializableExtra("email_id")
-
     }
 
     private fun toolbar() {
@@ -73,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                 val user = snapshot.getValue(User::class.java)
                 binding.apply {
                     username.text = user!!.userName
-                    if (user.imageUrl.isNullOrEmpty()) {
+                    if (user.imageUrl== "default") {
                         binding.profileImage.setImageResource(R.drawable.ic_person)
                     } else {
                         Picasso.get().load(user.imageUrl).into(binding.profileImage)

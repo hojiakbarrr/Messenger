@@ -35,6 +35,7 @@ class ChatsAdapter(chatList: List<Chat>, context: Context, imageUrl: String) :
     var imageUrl: String? = imageUrl
     var firebaseUser: FirebaseUser? = null
 
+
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var show_message: TextView
         var check_image_chat: ImageView? = null
@@ -43,7 +44,7 @@ class ChatsAdapter(chatList: List<Chat>, context: Context, imageUrl: String) :
         init {
             show_message = itemView.findViewById(R.id.show_message)
             profile_image_chat = itemView.findViewById(R.id.user_avatar)
-            check_image_chat = itemView.findViewById(R.id.status_read)
+            check_image_chat = itemView.findViewById(R.id.status_read_sender)
         }
     }
 
@@ -61,7 +62,7 @@ class ChatsAdapter(chatList: List<Chat>, context: Context, imageUrl: String) :
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val chat = chatList[position]
         holder.show_message.setText(chat.message)
-        if (imageUrl == "") {
+        if (imageUrl == "default") {
             Log.d("Errorr33", "$imageUrl")
             holder.profile_image_chat?.setImageResource(R.drawable.ic_person)
         } else {

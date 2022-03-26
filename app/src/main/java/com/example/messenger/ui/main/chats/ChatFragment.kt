@@ -60,7 +60,7 @@ class ChatFragment : Fragment(), ItemClickListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (data in snapshot.children){
                     val user = data.getValue(User::class.java)
-                    if (user?.id != firebaseUser!!.uid && user!!.hasChat == true){
+                    if (user?.id != firebaseUser!!.uid && user!!.hasChat){
                         users!!.add(user!!)
                         Log.d("user", "$users")
                         binding.apply {
