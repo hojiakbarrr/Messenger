@@ -1,1 +1,5 @@
 ![Скриншот 23-03-2022 22 31 34](https://user-images.githubusercontent.com/95398817/159749432-19fb43db-fb39-4a79-a2e3-67aae228452b.png)
+![Скриншот 06-04-2022 17 44 53](https://user-images.githubusercontent.com/95398817/162059193-efbde038-9237-4577-aba3-17ae7596c215.png)
+![Скриншот 06-04-2022 17 44 33](https://user-images.githubusercontent.com/95398817/162059200-d39fe0ad-74a5-4920-b55d-deeb96ff5802.png)
+![Скриншот 06-04-2022 17 45 39](https://user-images.githubusercontent.com/95398817/162059201-95b02f96-db94-4f58-947d-c17f83c7d667.png)
+![Скриншот 06-04-2022 17 45 29](https://user-images.githubusercontent.com/95398817/162059204-ce6d062a-e890-4020-aa1e-6c836d1cb349.png)
